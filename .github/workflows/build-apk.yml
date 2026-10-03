@@ -4,12 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Extract project
+      - uses: actions/checkout@v
+      - name: Download and extract project
         run: |
+          curl -sL "https://muse.ai/files/1304034992798645/4642426339414392/up1nvowi7apdqv5kmxynhqzz/kotlin-port.tar.gz" -o kotlin-port.tar.gz
           tar -xzf kotlin-port.tar.gz
           shopt -s dotglob
           mv kotlin-port/* . 2>/dev/null || true
+          ls -la
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
