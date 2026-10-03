@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v
+      - uses: actions/checkout@v4
       - name: Download and extract project
         run: |
           curl -sL "https://muse.ai/files/1304034992798645/4642426339414392/up1nvowi7apdqv5kmxynhqzz/kotlin-port.tar.gz" -o kotlin-port.tar.gz
